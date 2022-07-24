@@ -1,10 +1,10 @@
 # solar-system
 
-### Log
+### Logger
 
 `log := logger.GetInstance().Logger`
 
-`og.Info("success")`
+`log.Info("success")`
 
 `log.Error("error")`
 
