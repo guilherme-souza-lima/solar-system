@@ -1,4 +1,4 @@
-module solar-system
+module github.com/guilherme-souza-lima/solar-system
 
 go 1.18
 
