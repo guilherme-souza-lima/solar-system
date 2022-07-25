@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"github.com/elastic/go-elasticsearch/v7/esapi"
 	"github.com/google/uuid"
-	"solar-system/entity"
-	"solar-system/logger"
+	"github.com/guilherme-souza-lima/solar-system/entity"
+	"github.com/guilherme-souza-lima/solar-system/logger"
 )
 
 type LoggerElastic struct {
