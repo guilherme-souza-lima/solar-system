@@ -8,19 +8,19 @@ import (
 
 var lock = &sync.Mutex{}
 
-type single struct {
+type Single struct {
 	Logger *logrus.Logger
 }
 
-var loggerInstance *single
+var loggerInstance *Single
 
-func GetInstance() *single {
+func GetInstance() *Single {
 	if loggerInstance == nil {
 		lock.Lock()
 		defer lock.Unlock()
 
 		if loggerInstance == nil {
-			loggerInstance = &single{createLogger()}
+			loggerInstance = &Single{createLogger()}
 		}
 	}
 	return loggerInstance

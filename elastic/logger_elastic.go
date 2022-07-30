@@ -24,13 +24,13 @@ func (l LoggerElastic) LoggerElasticsearch(mapping entity.MappingElastic) error 
 
 	client, err := GetESClient(l.Brokers)
 	if err != nil {
-		log.Error(err)
+		log.Error("Error MyLib: " + err.Error())
 		return err
 	}
 
 	dataJSON, err := json.Marshal(mapping)
 	if err != nil {
-		log.Error(err)
+		log.Error("Error MyLib: " + err.Error())
 		return err
 	}
 	id := uuid.New()
@@ -44,11 +44,11 @@ func (l LoggerElastic) LoggerElasticsearch(mapping entity.MappingElastic) error 
 
 	res, err := req.Do(context.Background(), client)
 	if err != nil {
-		log.Error(err)
+		log.Error("Error MyLib: " + err.Error())
 		return err
 	}
 	defer res.Body.Close()
 
-	log.Info("success")
+	log.Warn("Logger Elasticsearch: " + l.Index)
 	return nil
 }
