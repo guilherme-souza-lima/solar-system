@@ -15,9 +15,21 @@ func main() {
 		Message:    "success",
 		CreateAt:   time.Now(),
 		User: entity.User{
-			ID:   "22",
-			Name: "33",
-			Nick: "44",
+			ID:   "39473b0d-93bf-4309-996a-2b035deb5d6e",
+			Name: "Emily Sanchez",
+			Nick: "Martramed",
+		},
+	})
+
+	insert.LoggerElasticsearchPatterTest(entity.History{
+		URL:        "/url/logger",
+		StatusCode: 400,
+		Message:    "error",
+		CreateAt:   time.Now(),
+		User: entity.User{
+			ID:   "18ff9fd7-a675-4a5e-8307-4ddb8b783179",
+			Name: "Brandon Bishop",
+			Nick: "Subjecome",
 		},
 	})
 }
