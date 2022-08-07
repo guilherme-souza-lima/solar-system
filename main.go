@@ -1,4 +1,4 @@
-package solar_system
+package main
 
 import (
 	"github.com/guilherme-souza-lima/solar-system/elastic"
@@ -7,13 +7,17 @@ import (
 )
 
 func main() {
-	brokers := []string{"", ""}
-	insert := elastic.NewLoggerElastic("", brokers)
-	insert.LoggerElasticsearch(entity.MappingElastic{
-		StatusCode: 0,
-		Level:      "",
-		Message:    entity.MessageElastic{},
-		Date:       time.Time{},
-		User:       entity.UserElastic{},
+	brokers := []string{"http://167.114.147.66:9200", "http://167.114.147.66:9201"}
+	insert := elastic.NewLoggerElastic("logger_ss", brokers)
+	insert.LoggerElasticsearchPatterTest(entity.History{
+		URL:        "/url/logger",
+		StatusCode: 200,
+		Message:    "success",
+		CreateAt:   time.Now(),
+		User: entity.User{
+			ID:   "22",
+			Name: "33",
+			Nick: "44",
+		},
 	})
 }

@@ -3,7 +3,6 @@ package entity
 import "time"
 
 type History struct {
-	ID         string    `json:"id"`
 	URL        string    `json:"url"`
 	StatusCode int       `json:"status_code"`
 	Message    string    `json:"message"`
